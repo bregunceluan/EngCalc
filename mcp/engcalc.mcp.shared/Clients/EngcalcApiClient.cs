@@ -1,4 +1,4 @@
-﻿using engcalc.mcp.server.DTOs;
+﻿using engcalc.mcp.shared.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace engcalc.mcp.server.Clients;
+namespace engcalc.mcp.shared.Clients;
 
 public class EngcalcApiClient
 {

@@ -1,9 +1,10 @@
-﻿using engcalc.mcp.server.Clients;
+﻿using engcalc.mcp.shared.Clients;
+using engcalc.mcp.shared.Tools;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using ModelContextProtocol.Protocol.Types;
+using ModelContextProtocol.Protocol;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -22,7 +23,7 @@ builder.Services
         mcp.ServerInfo = serverInfo;
     })
     .WithStdioServerTransport()
-    .WithToolsFromAssembly();
+    .WithToolsFromAssembly(typeof(EngCalcTools).Assembly);
 
 builder.Services.AddHttpClient<EngcalcApiClient>(client =>
 {

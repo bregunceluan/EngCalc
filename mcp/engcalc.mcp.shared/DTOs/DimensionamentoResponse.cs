@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace engcalc.mcp.server.DTOs;
+namespace engcalc.mcp.shared.DTOs;
 
 public class DimensionamentoResponse
 {

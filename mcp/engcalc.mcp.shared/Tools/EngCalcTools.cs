@@ -1,5 +1,5 @@
-﻿using engcalc.mcp.server.Clients;
-using engcalc.mcp.server.DTOs;
+﻿using engcalc.mcp.shared.Clients;
+using engcalc.mcp.shared.DTOs;
 using ModelContextProtocol.Server;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace engcalc.mcp.server.Tools;
+namespace engcalc.mcp.shared.Tools;
 [McpServerToolType]
 public static class EngCalcTools
 {
@@ -53,6 +53,5 @@ public static class EngCalcTools
         }
 
     }
-
 
 }

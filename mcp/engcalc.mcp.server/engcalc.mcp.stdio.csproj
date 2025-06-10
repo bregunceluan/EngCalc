@@ -10,7 +10,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.5" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.5" />
-    <PackageReference Include="ModelContextProtocol" Version="0.1.0-preview.13" />
+    <PackageReference Include="ModelContextProtocol" Version="0.2.0-preview.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\engcalc.mcp.shared\engcalc.mcp.shared.csproj" />
   </ItemGroup>
 
 </Project>

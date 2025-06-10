@@ -400,3 +400,7 @@ FodyWeavers.xsd
 *.sln.iml
 appsettings.*
 appsettings
+
+#Custom scripts folder
+scripts/
+*.ps1
