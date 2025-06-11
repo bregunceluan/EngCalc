@@ -32,8 +32,7 @@ O [MCP](https://modelcontextprotocol.io/introduction) é uma forma de fornecer c
 
 Baixe o [Claude Desktop](https://claude.ai/download) e instale em seu computador.
 
-Após instalado, clique eu Menu, logo após clique em Configurações. Uma janela nova será aberta, e nela você deve clicar em Editar Configurações. Isso abrirá o arquivo ''
-copie o código abaixo, e cole nesse arquivo. Com essa configuração, você vai adicionar o servidor MCP do EngCalc como contexto para o seu Claude Desktop.
+Após instalado, clique eu Menu, logo após clique em Arquivos > Configurações. Uma janela nova será aberta, e nela você deve clicar em Desenvolvedo > Editar Configurações. Isso abrirá o arquivo 'claude_desktop_config.json' copie o código abaixo, e cole nesse arquivo. Com essa configuração, você vai adicionar o servidor MCP do EngCalc como contexto para o seu Claude Desktop.
 
 ```json
 {
@@ -49,8 +48,7 @@ copie o código abaixo, e cole nesse arquivo. Com essa configuração, você vai
 }
 ```
 Agora você deve reiniciar o Claude, certifique-se de que o programa tenho mesmo finalizado, e não esteja aberto na toolbar. 
-Agora você já pode começar a fazer o seus prompts, aqui está um prompt para você começar, caso queira.
-
+Você já pode começar a fazer o seus prompts, aqui está um exemplo para te inspirar:
 ```text
 Crie um gráfico para mostrar a influência da modificação da altura em um dimensionamento de uma viga de concreto. 
 Teste diversas alturas e plote no gráfico. Para cada teste, faça uma chamada na API utilizando o MCP, e utilize os resultados. 

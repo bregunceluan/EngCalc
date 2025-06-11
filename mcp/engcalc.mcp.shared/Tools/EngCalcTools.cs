@@ -14,20 +14,23 @@ namespace engcalc.mcp.shared.Tools;
 public static class EngCalcTools
 {
 
-    [McpServerTool, Description("Dimensiona uma viga de concreto de acordo com a norma brasileira NBR-6118")]
+    [McpServerTool, Description("Dimensiona uma viga de concreto de acordo com a norma brasileira NBR-6118. Obtendo assim aço necessário" +
+        "para que o elemento estrutural esteja seguros e dentro dos limites estabelecidos.")]
     public static async Task<string> DimensionaVigaDeConcreto(
 
         EngcalcApiClient engcalcClient,
 
-        [Description("Define o esforço solicitante de calculo ao qual a viga está submetida, sendo, " +
-        "V(Esforço Cortante em kN), M(Esforço flexor em kN.m), T(Esforço Torsor kn.M)")] Solicitacao solicitacao,
+        [Description("Define o esforço solicitante de calculo ao qual a viga está submetida, sendo: " +
+        "Vk(Esforço Cortante característico em kN), Mk(Esforço flexor característico em kN.m), Tk(Esforço Torsor característico em kn.M)")] Solicitacao solicitacao,
 
-        [Description("Define o aço utilizado na viga, sendo Fyk(Esforço de escoamento do aço em MPa)")] Aco aco,
+        [Description("Define o aço utilizado na viga, sendo Fyk(Resistência característica do aço em MPa)")] Aco aco,
 
-        [Description("Define o concreto utilizado na viga, sendo Fck(Esforço de compressão do concreto em MPa)")] Concreto concreto,
+        [Description("Define o concreto utilizado na viga, sendo Fck(Resistência característica do concreto em MPa)")] Concreto concreto,
 
-        [Description("Define a geometria da viga, sendo dLinha(Altura útil da viga em cm), Comprimento(Comprimento da viga em cm)," +
-        " Base(Largura da viga em cm), Altura(Altura total da viga em cm)")] GeometriaViga geometriaViga
+        [Description("Define a geometria da viga, sendo dLinha (Também chamado d', mede distância da fibra mais " +
+        "extrema do concreto até o centro de gravidade das barras de compressão. Muita vezes o valor é 5cm.)."+
+        " Comprimento(Comprimento da viga em cm), Base(Largura da viga em cm), Altura(Altura total da viga em cm)." + 
+        " Apesar de não ser um valor de entrada na API, a altura útil da viga (chamado de d) é calculada como h - d'linha.")] GeometriaViga geometriaViga
         )
     {
 
