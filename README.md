@@ -1,7 +1,5 @@
 # EngCalc API
 
-
-
 🚀 **Uma API para Engenharia Civil**
 
 Essa é uma API que pública implementa algumas funcionalidades de apoio para a profissionais da indústria AEC (Architecture, Engineering, and Construction).
@@ -22,12 +20,42 @@ Funcionalidades da API:
 - [ ] Cálculos para estruturas Metálicas
 
 Docs:
-- [ ] Implementar frontend da documentação
+- [x] Implementar [frontend da documentação](https://engcalc-api.devluan.com/docs)
 
 ---
 
 ## 🧪 Testando a API
-A API pode ser testada de três formas: em ambiente local, via Docker, ou pela versão online.
+A API pode ser testada de quatro formas: em ambiente local, via Docker, versão online da api, ou via MCP.
+
+### MCP
+O [MCP](https://modelcontextprotocol.io/introduction) é uma forma de fornecer contexto para que um LLM resolva suas prompts. Neste caso, o contexto fornecido é a propria API. Para funcionar, o MCP necessita um client, que vai conectar ao MCP server. O Claude desktop é um desses possíveis clients.
+
+Baixe o [Claude Desktop](https://claude.ai/download) e instale em seu computador.
+
+Após instalado, clique eu Menu, logo após clique em Configurações. Uma janela nova será aberta, e nela você deve clicar em Editar Configurações. Isso abrirá o arquivo ''
+copie o código abaixo, e cole nesse arquivo. Com essa configuração, você vai adicionar o servidor MCP do EngCalc como contexto para o seu Claude Desktop.
+
+```json
+{
+  "mcpServers": {
+    "ENGCALC-MCP":{
+        "command": "npx",
+        "args":[
+            "mcp-remote",
+            "https://engcalc-mcp.devluan.com/sse"
+        ]
+    }
+  }
+}
+```
+Agora você deve reiniciar o Claude, certifique-se de que o programa tenho mesmo finalizado, e não esteja aberto na toolbar. 
+Agora você já pode começar a fazer o seus prompts, aqui está um prompt para você começar, caso queira.
+
+```text
+Crie um gráfico para mostrar a influência da modificação da altura em um dimensionamento de uma viga de concreto. 
+Teste diversas alturas e plote no gráfico. Para cada teste, faça uma chamada na API utilizando o MCP, e utilize os resultados. 
+Utilize momento fletor 15kn.m, cortante 8kn, torsor 2kn.m e d'linha 5cm.
+```
 
 
 ### Versão Online
